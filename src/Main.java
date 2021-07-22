@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+
     static Budget budget;
     static Budget budget1;
     static Budget budget2;
@@ -59,6 +60,34 @@ public class Main {
 
         }
     }
+    public void credentials(){
+        String name = null;
+        String email = null;
+        String password = null;
+        boolean admin = false;
+        Scanner input = new Scanner(System.in);
+        System.out.printf("Enter your first name: ");
+        name = input.next();
+
+        System.out.printf("Enter your Email: ");
+        email = input.next();
+        System.out.printf("Enter your Password: ");
+        password = input.next();
+        System.out.printf("Is this account for Admin Enter yes or no: ");
+        String admin1 = input.next();
+        if(admin1.equals("yes")){
+            admin = true;
+        }
+        else if(admin1.equals("no")) {
+            admin = false;
+        }
+        else {
+            System.out.printf("Enter yes or no any other input is not valid.");
+            credentials();
+        }
+        SignUp signUp = new SignUp();
+        signUp.Credentails(name,email,password,admin);
+    }
     public static void main(String[] args) {
         Main main = new Main();
         budget = new Budget("Mehran","2014","600","20km","4",1200,false);
@@ -73,6 +102,8 @@ public class Main {
         System.out.printf("Select Category.\n What type of car you are looking for?");
         System.out.printf("\n1. Budget\n2. Standard\n3. Luxury\n4. SUV\n");
 
-        main.userChoice();
+        //main.userChoice();
+        main.credentials();
+
     }
 }
