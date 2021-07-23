@@ -1,3 +1,4 @@
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +11,18 @@ public class Main {
     static Stardard stardard1;
     static Stardard stardard2;
     public void userChoice(){
+        budget = new Budget("Mehran","2014","600","20km","4",1200,false);
+        budget1 = new Budget("Wagon R","2012","500","18km","4",1400,true);
+        budget2 = new Budget("Hi Roof","2008","500","25km","4",1000,false);
+
+        stardard = new Stardard("Corolla", "2011","900", "15km","4",2000,true,false);
+        stardard1 = new Stardard("Corolla gli", "2013","1300", "12km","4",2200,true,false);
+        stardard2 = new Stardard("Honda civic", "2019","2300", "12km","4",2800,true,true);
+
+        System.out.printf("welcome to Rental Car project.");
+        System.out.printf("Select Category.\n What type of car you are looking for?");
+        System.out.printf("\n1. Budget\n2. Standard\n3. Luxury\n4. SUV\n");
+
         Scanner input = new Scanner(System.in);
         System.out.printf("Enter a number to select the category.");
         int selectCar = input.nextInt();
@@ -61,16 +74,17 @@ public class Main {
         }
     }
     public void credentials(){
+        int id = 0;
         String name = null;
-        String email = null;
+        String Username = null;
         String password = null;
         boolean admin = false;
         Scanner input = new Scanner(System.in);
         System.out.printf("Enter your first name: ");
         name = input.next();
 
-        System.out.printf("Enter your Email: ");
-        email = input.next();
+        System.out.printf("Enter your Username: ");
+        Username = input.next();
         System.out.printf("Enter your Password: ");
         password = input.next();
         System.out.printf("Is this account for Admin Enter yes or no: ");
@@ -86,24 +100,47 @@ public class Main {
             credentials();
         }
         SignUp signUp = new SignUp();
-        signUp.Credentails(name,email,password,admin);
+        id = id + 1;
+        signUp.Credentails(id,name,Username,password,admin);
+    }
+
+    public void loginCredentials() {
+        String Username = null;
+        String password = null;
+        boolean admin = false;
+        Scanner input = new Scanner(System.in);
+        try{
+            FileReader fileReader = new FileReader("credential.txt");
+        }catch (Exception x){
+
+        }
+
+    }
+
+    //asking user to signup or login to the account
+    public void SignupOrLogin(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("Enter login if you have account. Enter signup if do not already have account.");
+        //asking user to define if he/she wants to login o signup
+        String login = scanner.next();
+        //if login then match the credentials
+        if(login.equals("login")){
+            SignUp signUp = new SignUp();
+            signUp.login();
+        }
+        //create a new account
+        else if (login.equals("signup")) {
+            credentials();
+        }
+        //wrong input software will ask again the credentials
+        else {
+            SignupOrLogin();
+        }
     }
     public static void main(String[] args) {
         Main main = new Main();
-        budget = new Budget("Mehran","2014","600","20km","4",1200,false);
-        budget1 = new Budget("Wagon R","2012","500","18km","4",1400,true);
-        budget2 = new Budget("Hi Roof","2008","500","25km","4",1000,false);
-
-        stardard = new Stardard("Corolla", "2011","900", "15km","4",2000,true,false);
-        stardard1 = new Stardard("Corolla gli", "2013","1300", "12km","4",2200,true,false);
-        stardard2 = new Stardard("Honda civic", "2019","2300", "12km","4",2800,true,true);
-
-        System.out.printf("welcome to Rental Car project.");
-        System.out.printf("Select Category.\n What type of car you are looking for?");
-        System.out.printf("\n1. Budget\n2. Standard\n3. Luxury\n4. SUV\n");
-
+        main.SignupOrLogin();
         //main.userChoice();
-        main.credentials();
 
     }
 }
