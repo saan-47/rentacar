@@ -31,11 +31,12 @@ public class SignUp extends Main implements AccountCredentials {
              fileWriter.write("Employee id: "+ id+"\n");
              fileWriter.write("Employee Name: " + name+"\n");
              fileWriter.write("Admin Employee : " + admin+"\n");
-             fileWriter1.write(Username+","+password+"\n");
+             fileWriter1.write(Username+","+password+","+admin+"\n");
               numOfUser+=1;
              fileWriter.close();
              fileWriter1.close();
              System.out.printf("You are successfully signed up.");
+             SignupOrLogin();
          }
          catch (Exception e){
              System.out.printf("Error occurred.");
@@ -52,23 +53,36 @@ public class SignUp extends Main implements AccountCredentials {
         pass = scanner.next();
     }
     public void login(){
-
+        //flag for finding user
         boolean found = false;
+        //variables to iterate the file
         String email= "";
         String passkey= "";
+        String admin = "";
+
         try{
+            //read file
             input = new Scanner(new File("credential.txt"));
+            //email and password input from user
             usernamePass();
+            //defining how to saperate one user from another in the file
             input.useDelimiter("[,\n]");
+            //looping through all credentials until find the match
             while (input.hasNext() && !found){
                 email = input.next();
                 passkey = input.next();
-
-                if(email.trim().equals(username.trim()) && passkey.trim().equals(pass.trim())){
+                admin = input.next();
+                //condition for matching the credential of user
+                if(email.trim().equals(username.trim()) && passkey.trim().equals(pass.trim())) {
                     found = true;
-                    System.out.printf("Worked!!");
-                    System.out.printf("Worked!!");
+                    //checking if the user is admin or not
+                    if(admin.trim().equals("true")){
+                        System.out.printf("This is admin");
+                    }else{
+                        System.out.printf("This is not admin!");
                     userChoice();
+                    }
+                    System.out.printf("Hurrah");
                 }
             }
             input.close();
@@ -90,7 +104,8 @@ public class SignUp extends Main implements AccountCredentials {
 //                }
 //            }
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.printf("No such user. Try again with current credentials.\n");
+            SignupOrLogin();
         }
     }
 
