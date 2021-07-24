@@ -5,100 +5,24 @@ public class Register {
     private String registration_ticket;
     private String registration_date;
     private String registration_description;
-    private String name;
-    private String email;
-    private String address;
-    private int phoneNumber;
-    private String carName;
-    private String fare;
-    private long CNIC;
-    private String CNICimage;
-    private String pichupDate;
-    private String Address;
-    private String tourDetail;
 
 
-
-    public void submitForm(String carName){
+    public void addBooking(){
 
     }
-    public String getName() {
-        return name;
-    }
+    public void editBooking(){
 
-    public void setName(String name) {
-        this.name = name;
     }
+    public void deleteBooking(){
 
-    public String getEmail() {
-        return email;
     }
+    public void updateBooking(){
 
-    public void setEmail(String email) {
-        this.email = email;
     }
+    public void saveBooking(){
 
-    public String getAddress() {
-        return address;
     }
+    public void searchBooking(){
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getTourDetail() {
-        return tourDetail;
-    }
-
-    public void setTourDetail(String tourDetail) {
-        this.tourDetail = tourDetail;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getCarName() {
-        return carName;
-    }
-
-    public void setCarName(String carName) {
-        this.carName = carName;
-    }
-
-    public String getFare() {
-        return fare;
-    }
-
-    public void setFare(String fare) {
-        this.fare = fare;
-    }
-
-    public long getCNIC() {
-        return CNIC;
-    }
-
-    public void setCNIC(long CNIC) {
-        this.CNIC = CNIC;
-    }
-
-    public String getCNICimage() {
-        return CNICimage;
-    }
-
-    public void setCNICimage(String CNICimage) {
-        this.CNICimage = CNICimage;
-    }
-
-    public String getPichupDate() {
-        return pichupDate;
-    }
-
-    public void setPichupDate(String pichupDate) {
-        this.pichupDate = pichupDate;
     }
 }

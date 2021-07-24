@@ -77,7 +77,9 @@ public class SignUp extends Main implements AccountCredentials {
                     found = true;
                     //checking if the user is admin or not
                     if(admin.trim().equals("true")){
+
                         System.out.printf("This is admin");
+                        adminPanel();
                     }
                     else {
                         System.out.printf("This is not admin!");
@@ -86,6 +88,7 @@ public class SignUp extends Main implements AccountCredentials {
                     System.out.printf("Hurrah");
                 }
             }
+            System.out.printf("There is no such user. Try again.");
             input.close();
 
 //            String c;
