@@ -76,19 +76,24 @@ public class Main {
     public void credentials(){
         int id = 0;
         String name = null;
-        String Username = null;
+        String email = null;
         String password = null;
+        String address = null;
         boolean admin = false;
         Scanner input = new Scanner(System.in);
         System.out.printf("Enter your first name: ");
         name = input.next();
 
-        System.out.printf("Enter your Username: ");
-        Username = input.next();
+        System.out.printf("Enter your Email: ");
+        email = input.next();
         System.out.printf("Enter your Password: ");
         password = input.next();
+        System.out.printf("Enter your address: ");
+        address = input.next();
         System.out.printf("Is this account for Admin Enter yes or no: ");
         String admin1 = input.next();
+        System.out.printf("Enter your phone number JUST INTEGERS.");
+        long mobileNum = input.nextLong();
         if(admin1.equals("yes")){
             admin = true;
         }
@@ -101,7 +106,7 @@ public class Main {
         }
         SignUp signUp = new SignUp();
         id = id + 1;
-        signUp.Credentails(id,name,Username,password,admin);
+        signUp.Credentails(id,name,email,password,address,admin, mobileNum);
     }
 
     public void loginCredentials() {

@@ -1,13 +1,11 @@
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
 
 public class SignUp extends Main implements AccountCredentials {
     Scanner input;
     int numOfUser = 0;
-    String username, pass;
+    String email, pass;
     public void createFile() {
         File file = new File("credential.txt");
 
@@ -24,14 +22,16 @@ public class SignUp extends Main implements AccountCredentials {
         }
     }
     @Override
-    public void Credentails(int id,String name, String Username, String password, boolean admin) {
+    public void Credentails(int id,String name, String email, String password,String address, boolean admin, long mobile) {
          try {
              FileWriter fileWriter  = new FileWriter("credentials.txt", true);
              FileWriter fileWriter1  = new FileWriter("credential.txt", true);
              fileWriter.write("Employee id: "+ id+"\n");
              fileWriter.write("Employee Name: " + name+"\n");
              fileWriter.write("Admin Employee : " + admin+"\n");
-             fileWriter1.write(Username+","+password+","+admin+"\n");
+             fileWriter.write("Employee address : " + address+"\n");
+             fileWriter.write("Employee mobile : " + mobile+"\n");
+             fileWriter1.write(email+","+password+","+admin+"\n");
               numOfUser+=1;
              fileWriter.close();
              fileWriter1.close();
@@ -48,7 +48,7 @@ public class SignUp extends Main implements AccountCredentials {
         Scanner scanner = new Scanner(System.in);
 
         System.out.printf("Enter your username.");
-        username = scanner.next();
+        email = scanner.next();
         System.out.printf("Enter password.");
         pass = scanner.next();
     }
@@ -73,14 +73,15 @@ public class SignUp extends Main implements AccountCredentials {
                 passkey = input.next();
                 admin = input.next();
                 //condition for matching the credential of user
-                if(email.trim().equals(username.trim()) && passkey.trim().equals(pass.trim())) {
+                if(email.trim().equals(this.email.trim()) && passkey.trim().equals(pass.trim())) {
                     found = true;
                     //checking if the user is admin or not
                     if(admin.trim().equals("true")){
                         System.out.printf("This is admin");
-                    }else{
+                    }
+                    else {
                         System.out.printf("This is not admin!");
-                    userChoice();
+                        userChoice();
                     }
                     System.out.printf("Hurrah");
                 }

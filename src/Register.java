@@ -1,4 +1,10 @@
 public class Register {
+    private int registration_id;
+    private String registration_title;
+    private String registration_type;
+    private String registration_ticket;
+    private String registration_date;
+    private String registration_description;
     private String name;
     private String email;
     private String address;
