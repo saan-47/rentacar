@@ -125,6 +125,7 @@ public class Main {
         int selectOperation = input.nextInt();
         switch (selectOperation){
             case 1:
+
                 car.addCar();
                 break;
             case 2:

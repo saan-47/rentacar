@@ -1,6 +1,6 @@
 public class Car {
 
-    private int carid;
+    private int carid = 0;
     private int car_driver_id;
     private int car_customer_id;
     private int car_number;
@@ -11,6 +11,7 @@ public class Car {
     CarRouts carRouts;
 
     public void addCar(){
+        carid++;
 
     }
     public void editCar(){
