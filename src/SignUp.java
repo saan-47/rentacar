@@ -77,7 +77,6 @@ public class SignUp extends Main implements AccountCredentials {
                     found = true;
                     //checking if the user is admin or not
                     if(admin.trim().equals("true")){
-
                         System.out.printf("This is admin");
                         adminPanel();
                     }

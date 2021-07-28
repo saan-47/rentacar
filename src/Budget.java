@@ -1,29 +1,54 @@
-public class Budget extends CarCategories{
-    private boolean AC = false;
+import java.io.File;
+import java.io.FileWriter;
 
+public class Budget extends Car implements CarMaterial {
 
-    public Budget(String name, String model, String CC, String millage, String seats, int price, boolean AC) {
-        super(name, model, CC, millage, seats, price);
-        this.AC = AC;
+    @Override
+    public void AddcreateFile(int carid, String car_name, String car_type, String car_description, boolean AC_Availability,boolean trunk, boolean automatic, int rate_per_mile) {
+        try {
+            FileWriter fileWriter  = new FileWriter("budgetCars.txt", true);
+            fileWriter.write("id :"+carid+"\n");
+            fileWriter.write("Name :"+car_name+"\n");
+            fileWriter.write("Car type :"+car_type+"\n");
+            fileWriter.write("Car Description :"+car_description+"\n");
+            fileWriter.write("AC available :"+AC_Availability+"\n");
+            fileWriter.write("Car Mile rate :"+rate_per_mile+"\n");
+            fileWriter.close();
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
-
-    public boolean isAC() {
-        return AC;
+    @Override
+    public void addCar() {
+        super.addCar();
     }
 
-    public void cars(){
-        System.out.printf("\n1. Mehran\n2. Wagon R");
+    @Override
+    public void editCar() {
+        super.editCar();
     }
-    public void specs(){
-        System.out.printf("Name: "+getName()+" \n"+"Model: "+getModel()+" \n"+"CC: "+getCC()+" \n"
-                +"Milage: "+getMillage()+" \n"
-                +"Seats: "+getSeats()+" \n"
-                +"Price: "+getPrice()+" \n"
-                +"AC: "+AC+" \n"
-        );
+
+    @Override
+    public void deleteCar() {
+        super.deleteCar();
     }
-    public void setAC(boolean AC) {
-        this.AC = AC;
+
+    @Override
+    public void updateCar() {
+        super.updateCar();
+    }
+
+    @Override
+    public void saveCar() {
+        super.saveCar();
+    }
+
+    @Override
+    public void searchCar() {
+        super.searchCar();
     }
 }

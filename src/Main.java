@@ -18,13 +18,6 @@ public class Main {
     static Stardard stardard2;
     Scanner input = new Scanner(System.in);
     public void userChoice(){
-        budget = new Budget("Mehran","2014","600","20km","4",1200,false);
-        budget1 = new Budget("Wagon R","2012","500","18km","4",1400,true);
-        budget2 = new Budget("Hi Roof","2008","500","25km","4",1000,false);
-
-        stardard = new Stardard("Corolla", "2011","900", "15km","4",2000,true,false);
-        stardard1 = new Stardard("Corolla gli", "2013","1300", "12km","4",2200,true,false);
-        stardard2 = new Stardard("Honda civic", "2019","2300", "12km","4",2800,true,true);
 
         System.out.printf("welcome to Rental Car project.");
         System.out.printf("Select Category.\n What type of car you are looking for?");
@@ -120,12 +113,11 @@ public class Main {
         car = new Car();
         System.out.printf("\nWhat do you want to do?\n" +
                 "Enter a number to select operation." +
-                "\n1. Add Car\n2. Edit car\n3. Delete Car\n4. Update Car\n5. Save Car\n7. Search a Car\n" +
+                "\n1. Add Car\n2. Edit car\n3. Delete Car\n4. Update Car\n5. Save Car\n7. Search a Car\n8. See the list of cars\n" +
                 "Enter 0 if you want to end the Operation and start over.");
         int selectOperation = input.nextInt();
         switch (selectOperation){
             case 1:
-
                 car.addCar();
                 break;
             case 2:

@@ -1,67 +1,58 @@
 public class CarCategories {
-    private String name;
-    private String Model;
-    private String CC;
-    private String millage;
-    private String seats;
-    private int price;
+    private int car_driver_id;
+    private int car_customer_id;
+    private int car_number;
+    private String car_company;
+    private String car_type;
+    private String car_description;
 
-    public CarCategories(String name, String model, String CC, String millage, String seats, int price) {
 
-        this.name = name;
-        Model = model;
-        this.CC = CC;
-        this.millage = millage;
-        this.seats = seats;
-        this.price = price;
 
+    public int getCar_driver_id() {
+        return car_driver_id;
     }
 
-    public String getName() {
-        return name;
+    public void setCar_driver_id(int car_driver_id) {
+        this.car_driver_id = car_driver_id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getCar_customer_id() {
+        return car_customer_id;
     }
 
-    public String getModel() {
-        return Model;
+    public void setCar_customer_id(int car_customer_id) {
+        this.car_customer_id = car_customer_id;
     }
 
-    public void setModel(String model) {
-        Model = model;
+    public int getCar_number() {
+        return car_number;
     }
 
-    public String getCC() {
-        return CC;
+    public void setCar_number(int car_number) {
+        this.car_number = car_number;
     }
 
-    public void setCC(String CC) {
-        this.CC = CC;
+    public String getCar_company() {
+        return car_company;
     }
 
-    public String getMillage() {
-        return millage;
+    public void setCar_company(String car_company) {
+        this.car_company = car_company;
     }
 
-    public void setMillage(String millage) {
-        this.millage = millage;
+    public String getCar_type() {
+        return car_type;
     }
 
-    public String getSeats() {
-        return seats;
+    public void setCar_type(String car_type) {
+        this.car_type = car_type;
     }
 
-    public void setSeats(String seats) {
-        this.seats = seats;
+    public String getCar_description() {
+        return car_description;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
+    public void setCar_description(String car_description) {
+        this.car_description = car_description;
     }
 }
