@@ -18,60 +18,7 @@ public class Main {
     static Stardard stardard2;
     Scanner input = new Scanner(System.in);
     public void userChoice(){
-
         System.out.printf("welcome to Rental Car project.");
-        System.out.printf("Select Category.\n What type of car you are looking for?");
-        System.out.printf("\n1. Budget\n2. Standard\n3. Luxury\n4. SUV\n");
-
-
-        System.out.printf("Enter a number to select the category.");
-        int selectCar = input.nextInt();
-        switch (selectCar){
-            case 1:
-                System.out.printf("You Choose Budget cars!");
-                budget.cars();
-                System.out.printf("\nEnter a number to select the car.");
-                int car = input.nextInt();
-                switch (car){
-                    case 1:
-                        budget.specs();
-                        break;
-                    case 2:
-                        budget1.specs();
-                        break;
-                    case 3:
-                        budget2.specs();
-                        break;
-                    default:
-                        System.out.printf("Select one of the above options.");
-                        return;
-                }
-                break;
-            case 2:
-                System.out.printf("\nEnter a number to select the car.");
-                stardard.cars();
-                int car1 = input.nextInt();
-                switch (car1){
-                    case 1:
-                        stardard.specs();
-                        break;
-                    case 2:
-                        stardard1.specs();
-                        break;
-                    case 3:
-                        stardard2.specs();
-                        break;
-                    default:
-                        System.out.printf("\nWrong Entry.");
-                }
-                break;
-            default:
-                System.out.printf("\nWrong Entry!!\n");
-                //calls the function again so the user can enter a correct entry.
-                userChoice();
-                break;
-
-        }
     }
     public void credentials(){
         int id = 0;

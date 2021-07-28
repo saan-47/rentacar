@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Budget extends Car implements CarMaterial {
 
+
     @Override
     public void AddcreateFile(int carid, String car_name, String car_type, String car_description, boolean AC_Availability,boolean trunk, boolean automatic, int rate_per_mile) {
         try {
@@ -27,21 +28,6 @@ public class Budget extends Car implements CarMaterial {
 
     @Override
     public void addCar() {
-        super.addCar();
-        if (category == 1){
-            car_type = "budget";
-            setCar_type("budget");
-        }else if(category ==2 ){
-            car_type = "Standard";
-        }else if(category ==3 ){
-            car_type = "Luxury";
-        }else if(category ==4 ){
-            car_type = "SUV";
-        }else{
-            System.out.printf("Wrong entry. Try again!");
-            addCar();
-        }
-
         System.out.printf("Enter Car company name: ");
         //car_company = scanner.next();
         setCar_company(scanner.next());
@@ -81,10 +67,7 @@ public class Budget extends Car implements CarMaterial {
             System.out.printf("Wrong Entry. Try again!");
             return;
         }
-
-        if(category == 1){
-            budget.AddcreateFile(1,getCar_name(),getCar_type(),getCar_description(),isAv_available(), isTrunk(), isAutomatic(), getRate_per_mile() );
-        }
+            budget.AddcreateFile(1,getCar_name(),getCar_type(),getCar_description(),isAv_available(), isTrunk(), isAutomatic(), getRate_per_mile());
 
     }
 
