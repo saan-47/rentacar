@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class Budget extends Car implements CarMaterial {
 
@@ -22,9 +23,69 @@ public class Budget extends Car implements CarMaterial {
 
     }
 
+
+
     @Override
     public void addCar() {
         super.addCar();
+        if (category == 1){
+            car_type = "budget";
+            setCar_type("budget");
+        }else if(category ==2 ){
+            car_type = "Standard";
+        }else if(category ==3 ){
+            car_type = "Luxury";
+        }else if(category ==4 ){
+            car_type = "SUV";
+        }else{
+            System.out.printf("Wrong entry. Try again!");
+            addCar();
+        }
+
+        System.out.printf("Enter Car company name: ");
+        //car_company = scanner.next();
+        setCar_company(scanner.next());
+
+        System.out.printf("Enter Car name: ");
+        //car_name = scanner.next();
+        setCar_name(scanner.next());
+
+        System.out.printf("Enter Car Number.");
+        //car_number = scanner.nextInt();
+        setCar_number(scanner.nextInt());
+
+
+//        System.out.printf("Enter Car driver ID.");
+//        car_driver_id = scanner.nextInt();
+//        budget.setCar_driver_id(car_driver_id);
+
+        System.out.printf("Enter car description.");
+
+        //car_description = scanner.next();
+
+        System.out.printf("Enter Car rate per mile.");
+        //Rate_per_mile = scanner.nextInt();
+        setRate_per_mile(scanner.nextInt());
+
+        System.out.printf("Enter yes if the car is air conditioning else enter no");
+        String ac = scanner.next();
+        if(ac.equals("yes")){
+            //av_available = true;
+            setAv_available(true);
+        }
+        else if(ac.equals("no")){
+            //av_available = false;
+            setAv_available(false);
+        }
+        else {
+            System.out.printf("Wrong Entry. Try again!");
+            return;
+        }
+
+        if(category == 1){
+            budget.AddcreateFile(1,getCar_name(),getCar_type(),getCar_description(),isAv_available(), isTrunk(), isAutomatic(), getRate_per_mile() );
+        }
+
     }
 
     @Override
