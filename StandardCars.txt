@@ -1,0 +1,9 @@
+id :1
+Name :Corolla
+Company Name :Toyota
+Car type :Standard
+Car Description :Comfortable
+AC available :true
+Trunk availability :true
+Automatic :false
+Car Mile rate :9
