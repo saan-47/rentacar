@@ -89,7 +89,7 @@ public class SignUp extends Main implements AccountCredentials {
             }
             System.out.printf("There is no such user. Try again.");
             input.close();
-
+            SignupOrLogin();
 //            String c;
 //            while(numOfUser != 0){
 //                System.out.printf(numOfUser+"\n");

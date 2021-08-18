@@ -1,7 +1,7 @@
 import java.io.FileWriter;
 import java.util.Scanner;
 
-public class Stardard extends Main implements CarMaterial {
+public class LuxuryCars extends Main implements CarMaterial {
 
     private int carid = 0;
     private String car_company;
@@ -15,9 +15,9 @@ public class Stardard extends Main implements CarMaterial {
     boolean automatic = false;
 
     @Override
-    public void AddcreateFile(int carid,String Car_company_name, String car_name, String car_type, String car_description,String Car_number, boolean AC_Availability, boolean trunk, boolean automatic, int rate_per_mile) {
+    public void AddcreateFile(int carid, String Car_company_name, String car_name, String car_type, String car_description, String Car_number, boolean AC_Availability, boolean trunk, boolean automatic, int rate_per_mile) {
         try {
-            FileWriter fileWriter  = new FileWriter("StandardCars.txt", true);
+            FileWriter fileWriter  = new FileWriter("LuxuryCars.txt", true);
             fileWriter.write(carid+","+car_name+","+Car_company_name+","+car_type+","+car_description+","+AC_Availability+","+trunk+","+automatic+","+rate_per_mile+"\n");
             fileWriter.close();
         }

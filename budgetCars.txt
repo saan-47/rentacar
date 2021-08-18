@@ -1,6 +1,1 @@
-id :1
-Name :mehran
-Car type :Budget
-Car Description :kakaka
-AC available :false
-Car Mile rate :45
+11,suzuki,mehran,Budget,small,KLO-468,false,false,false,114
