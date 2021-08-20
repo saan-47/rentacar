@@ -1,0 +1,2 @@
+1,suzuki,hiroof,Budget,room-for-8-persons,klj-321,false,false,false,140
+
