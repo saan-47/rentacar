@@ -83,7 +83,7 @@ public class Budget implements CarMaterial {
     public void editCar() {
 
         boolean found = false;
-        String carid = " ";
+        String carId = " ";
         String car_company=" ";
         String car_name=" ";
         String car_type = " ";
@@ -98,19 +98,19 @@ public class Budget implements CarMaterial {
             File file = new File("budgetCars.txt");
             scanner = new Scanner(file);
             scanner.useDelimiter("[,\n]");
-            while(scanner.hasNextLine() && !found){
-                carid = scanner.next();
+            while(scanner.hasNext() && !found){
+                carId = scanner.next();
                 car_company = scanner.next();
                 car_name = scanner.next();
-                car_number = scanner.next();
+                car_type = scanner.next();
                 car_description = scanner.next();
+                car_number = scanner.next();
                 av_available = scanner.hasNext();
                 Mile_rate = scanner.next();
-                car_type = scanner.next();
                 trunk = scanner.hasNext();
                 automatic = scanner.hasNext();
-                System.out.printf("Cars\n"+carid+"Company: "+car_company+"\n Name: "+car_name+"\n Number: "+car_number+"\n Description: "+car_description+
-                        "\n AC: "+av_available+"\n Rate per mile: "+Mile_rate+"\n Category: "+car_type+"\n Trunk: "+trunk
+                System.out.printf("Cars\n"+carId.trim()+"Company: "+car_company.trim()+"\n Name: "+car_name.trim()+"\n Number: "+car_number.trim()+"\n Description: "+car_description.trim()+
+                        "\n AC: "+av_available+"\n Rate per mile: "+Mile_rate.trim()+"\n Category: "+car_type.trim()+"\n Trunk: "+trunk
                 +"\n Automatic: "+automatic+"\n");
             }
         }catch (Exception e){
