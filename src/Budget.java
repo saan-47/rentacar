@@ -89,9 +89,9 @@ public class Budget implements CarMaterial {
         String car_type = " ";
         String car_description=" ";
         String car_number=" ";
-        boolean av_available;
-        boolean trunk;
-        boolean automatic;
+        String av_available;
+        String trunk;
+        String automatic;
         String Mile_rate=" ";
         //String car_number = "";
         try{
@@ -105,11 +105,11 @@ public class Budget implements CarMaterial {
                 car_type = scanner.next();
                 car_description = scanner.next();
                 car_number = scanner.next();
-                av_available = scanner.hasNext();
+                av_available = scanner.next();
                 Mile_rate = scanner.next();
-                trunk = scanner.hasNext();
-                automatic = scanner.hasNext();
-                System.out.printf("Cars\n"+carId.trim()+"Company: "+car_company.trim()+"\n Name: "+car_name.trim()+"\n Number: "+car_number.trim()+"\n Description: "+car_description.trim()+
+                trunk = scanner.next();
+                automatic = scanner.next();
+                System.out.printf("Cars"+carId.trim()+"\nCompany: "+car_company.trim()+"\n Name: "+car_name.trim()+"\n Number: "+car_number.trim()+"\n Description: "+car_description.trim()+
                         "\n AC: "+av_available+"\n Rate per mile: "+Mile_rate.trim()+"\n Category: "+car_type.trim()+"\n Trunk: "+trunk
                 +"\n Automatic: "+automatic+"\n");
             }
