@@ -273,7 +273,7 @@ public class Main {
     //asking user to signup or login to the account
     public void SignupOrLogin(){
         Scanner scanner = new Scanner(System.in);
-        System.out.printf("Enter login if you have account. Enter signup if do not already have account.");
+        System.out.printf("Enter login if you have account. Enter signup if do not already have account. OR Exit to close program.");
         //asking user to define if he/she wants to login o signup
         String login = scanner.next();
         //if login then match the credentials
@@ -284,6 +284,9 @@ public class Main {
         //create a new account
         else if (login.equals("signup")) {
             credentials();
+        }
+        else if (login.equals("exit")||login.equals("Exit")){
+            System.exit(1);
         }
         //wrong input software will ask again the credentials
         else {

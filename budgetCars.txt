@@ -1,1 +1,2 @@
-11,suzuki,mehran,Budget,small,KLO-468,false,false,false,114
+1,suzuki,mehran,Budget,small-budget,djs-566,false,false,false,150
+1,suzuki,hiroof,Budget,room-for-8-persons,klj-321,false,false,false,140
