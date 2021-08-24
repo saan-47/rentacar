@@ -3,19 +3,21 @@ import java.util.Scanner;
 
 public class LuxuryCars extends Main implements CarMaterial {
 
-    private int carid = 0;
-    private String car_company;
-    private String car_name;
-    private String car_number;
-    private String car_description;
-    private boolean av_available;
-    private int Rate_per_mile;
-    private String car_type = "Standard";
-    boolean trunk = true;
-    boolean automatic = false;
+     int carid = 0;
+     String car_company = " ";
+     String car_name =" ";
+     String car_number=" ";
+     String car_description=" ";
+     String av_available;
+     String Rate_per_mile;
+     String car_type = "Standard";
+    String trunk = " ";
+    String automatic = " ";
 
     @Override
-    public void AddcreateFile(int carid, String Car_company_name, String car_name, String car_type, String car_description, String Car_number, boolean AC_Availability, boolean trunk, boolean automatic, int rate_per_mile) {
+    public void AddcreateFile(int carid, String Car_company_name, String car_name, String car_type,
+                              String car_description, String Car_number, String AC_Availability,
+                              String trunk, String automatic, String rate_per_mile) {
         try {
             FileWriter fileWriter  = new FileWriter("LuxuryCars.txt", true);
             fileWriter.write(carid+","+car_name+","+Car_company_name+","+car_type+","+car_description+","+AC_Availability+","+trunk+","+automatic+","+rate_per_mile+"\n");
@@ -50,14 +52,14 @@ public class LuxuryCars extends Main implements CarMaterial {
             car_description = scanner.next();
 
             System.out.printf("Enter Car rate per mile.\nNote: Only Numbers are allowed.");
-            Rate_per_mile = scanner.nextInt();
+            Rate_per_mile = scanner.next();
 
             System.out.printf("Enter yes if the car is air conditioning else enter no");
             String ac = scanner.next();
             if (ac.equals("yes")) {
-                av_available = true;
+                av_available = "true";
             } else if (ac.equals("no")) {
-                av_available = false;
+                av_available = "false";
             } else {
                 System.out.printf("Wrong Entry. Try again!");
                 addCar();
